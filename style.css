@@ -1,0 +1,281 @@
+/* ------------------ Genel/reset ------------------ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #0F172A; }
+img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
+
+/* Akıcı kap paddingleri */
+.section { padding-block: clamp(2rem, 6vw, 5rem); }
+.container { width: min(1200px, 92%); margin-inline: auto; }
+
+/* ------------------ Navbar ------------------ */
+.navbar.custom-bg {
+  background-color: #fafafa !important;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1);
+}
+.navbar {
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1);
+}
+
+/* Açık arka planda link kontrastını iyileştir */
+.navbar.custom-bg .navbar-brand,
+.navbar.custom-bg .nav-link { color:#0F172A; }
+.navbar.custom-bg .nav-link.active,
+.navbar.custom-bg .nav-link:hover { color:#2A4759; }
+
+/* ------------------ Hero / Header ------------------ */
+/* Not: iOS'ta fixed arkaplan takılma yapabildiği için mobilde kapalı, 
+   tablet ve üstünde etkinleştiriyoruz. */
+
+
+   body { padding-top: 56px; }
+  @media (min-width: 992px){ body { padding-top: 72px; } }
+
+  /* Hero arka plan + gradient */
+  .hero {
+    position: relative;
+    min-height: calc(100vh - 72px); /* navbar sonrası tam ekran görünüm */
+    display: flex; align-items: center;
+    background-image:
+      linear-gradient(to bottom, rgba(42,71,89,.65), rgba(0,0,0,.65)),
+      url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* Metinlerin çok genişlememesi için */
+  .lead-wrap { max-width: 900px; }
+header{
+  min-height: 70vh;          /* küçük ekranlarda çok uzun olmasın */
+  height: 100svh;            /* mobil tarayıcılarda güvenli vh */
+  display:flex; align-items:center; justify-content:center;
+  position:relative; text-align:center;
+  background-image:
+    linear-gradient(to bottom, rgba(42,71,89,.65), rgba(0,0,0,.65)),
+    url('images/banner.jpg');
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, scroll; /* mobilde sabitleme yok */
+  padding-inline: 1rem;       /* küçük ekranlar için nefes */
+}
+
+/* 768px ve üstünde ikinci katmanı sabitle */
+@media (min-width: 768px){
+  header { background-attachment: scroll, fixed; }
+}
+
+/* Yazılar: akıcı tipografi */
+.header_content,
+.header_contet {              /* (yazım hatası varsa ikisini de kapsıyoruz) */
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.header_content h1,
+.header_contet h1{
+  color:#fafafa;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4.5vw, 3rem); /* mobil→desktop akıcı */
+  margin-bottom: .5rem;
+}
+
+.header_content p,
+.header_contet p{
+  color:#fafafa;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-top: .25rem;
+}
+
+/* ------------------ Ana içerik ------------------ */
+.main-content{
+  width: 100%;
+  /* max-height: 600px;  --> içerik taşmasını önlemek için KALDIRILDI */
+     background: #f4f4f9;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+}
+
+.main-content h2{
+  padding: clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+  color: #0F172A;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
+}
+
+.main-content p{
+  padding: clamp(.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+  text-align: justify;
+  font-size: clamp(.95rem, 2.2vw, 1.2rem);
+}
+
+/* ------------------ Hakkımda / About ------------------ */
+.about{ padding: clamp(2rem, 5vw, 5rem) 2rem; }
+.about .container { width: min(1000px, 92%); }
+
+/* ------------------ Point (kart grid) ------------------ */
+.point{
+  background-color:#fafafa;
+  padding: clamp(2rem, 5vw, 5rem) 2rem;
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+}
+.point h3{ color:#EF476F; }
+
+.point_content{
+  display:grid;
+  grid-template-columns: 1fr;            /* mobil: 1 kolon */
+  gap: 1.25rem;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding-inline: 1rem;                   /* mobilde kenarlardan taşma olmasın */
+}
+@media (min-width: 600px){                /* tablet: 2 kolon */
+  .point_content{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 900px){                /* desktop: 3 kolon */
+  .point_content{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.point_item{
+  background:#fff;
+  border:1px solid #eaeaea;
+  border-radius:14px;
+  padding: clamp(.85rem, 2vw, 1.25rem);
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+}
+.point_item img{
+  width:100%; height:auto; border-radius:10px;
+}
+
+
+
+
+.noktalar .card p{
+    font-size: 1.3rem;
+}
+
+.noktalar .card h5{
+   text-align: center;
+font-size: 2rem;
+}
+
+
+
+.noktalar .card h5 i{
+   text-align: center;
+  color: #EF476F;
+}
+
+
+
+
+
+
+/* ------------------ Yardımcılar ------------------ */
+.text-center { text-align:center; }
+.hidden-sm { display:none; }
+@media (min-width: 768px){ .hidden-sm { display:initial; } }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* SERVICES */
+    .services {
+        padding: 6rem 2rem;
+        background: #f4f4f9;
+        text-align: center;
+    }
+
+    .services h2 {
+        margin-bottom: 50px;
+        color: #0F172A;
+    }
+    
+      .services p{
+          text-align: justify !important;
+}
+      
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .service-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        cursor: pointer;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card i {
+        font-size: 2rem;
+        color: #EF476F;
+        margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+        margin-bottom: 15px;
+    }
+
+    .service-card p {
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* INFO */
+    .info {
+        padding: 6rem 2rem;
+        background: #0F172A;
+        color: #fafafa;
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    
+ 
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+     
+
+        .service-card {
+            padding: 25px 15px;
+        }
+    }
+
+    @media(max-width: 480px) {
+        .hero-content a {
+            padding: 12px 25px;
+            font-size: 0.9rem;
+        }
+    }
