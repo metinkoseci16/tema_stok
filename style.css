@@ -31,23 +31,14 @@ img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
    body { padding-top: 56px; }
   @media (min-width: 992px){ body { padding-top: 72px; } }
 
-  /* Hero arka plan + gradient */
-  .hero {
-    position: relative;
-    min-height: calc(100vh - 72px); /* navbar sonrası tam ekran görünüm */
-    display: flex; align-items: center;
-    background-image:
-      linear-gradient(to bottom, rgba(42,71,89,.65), rgba(0,0,0,.65)),
-      url('images/banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+
+
   /* Metinlerin çok genişlememesi için */
   .lead-wrap { max-width: 900px; }
+  /*
 header{
-  min-height: 70vh;          /* küçük ekranlarda çok uzun olmasın */
-  height: 100svh;            /* mobil tarayıcılarda güvenli vh */
+  min-height: 70vh;          
+  height: 100svh;           
   display:flex; align-items:center; justify-content:center;
   position:relative; text-align:center;
   background-image:
@@ -56,9 +47,94 @@ header{
   background-position: center, center;
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;
-  background-attachment: scroll, scroll; /* mobilde sabitleme yok */
-  padding-inline: 1rem;       /* küçük ekranlar için nefes */
+  background-attachment: scroll, scroll; 
+  padding-inline: 1rem;       /
 }
+*/
+
+
+
+
+
+header{
+  min-height: 70vh;          
+  height: 100svh;           
+  display:flex; align-items:center; justify-content:center;
+  position:relative; text-align:center;
+ background-color: #1e3c72;
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, scroll; 
+  padding-inline: 1rem;       /
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header_boxtext{
+
+
+/* From https://css.glass */
+background:#435e91b2;
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+
+
+  padding: 5rem 2rem;
+  border-radius: 0.3rem;
+  color: #fafafa;
+  margin-top: 3rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-align: center !important;
+   
+}
+
+.header_boxtext:hover{
+transform:translateY(-5px);
+transition: all 0.5s;
+   
+}
+
+
+.kesfet_btn{
+  width: 150px;
+  background-color: #fafafa;
+  color: #000000;
+  font-size: 1.2rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  margin-top: 3rem;
+transition: all 0.5s;
+  cursor: pointer;
+   
+}
+
+
+.kesfet_btn:hover{
+transform:translateY(-5px);
+transition: all 0.5s;
+}
+
+
+
+
+
+
+
 
 /* 768px ve üstünde ikinci katmanı sabitle */
 @media (min-width: 768px){
@@ -134,6 +210,17 @@ header{
 }
 @media (min-width: 600px){                /* tablet: 2 kolon */
   .point_content{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+
+
+
+
+
+
+
+
+
+
 }
 @media (min-width: 900px){                /* desktop: 3 kolon */
   .point_content{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -146,12 +233,45 @@ header{
   padding: clamp(.85rem, 2vw, 1.25rem);
   box-shadow: 0 2px 10px rgba(0,0,0,.04);
 }
-.point_item img{
-  width:100%; height:auto; border-radius:10px;
+
+.noktalar_content h3{
+  font-weight: bold;
+  color:#EF476F;
+  padding: 2rem 1rem;
+}
+.noktalar .card{
+
+cursor: pointer;
+transition: all 0.5s;
+
 }
 
 
 
+
+.noktalar .card:hover{
+
+transform: translateY(-5px);
+transition: all 0.5s;
+
+}
+
+
+
+
+
+
+
+
+
+.noktalar_text{
+  border: none; padding:5rem 2rem; border-radius: 0.3rem; margin-top: 5rem;  ;
+
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+background-color: #1e3c72;
+color: #fafafa;
+font-size: 1.2rem;
+}
 
 .noktalar .card p{
     font-size: 1.3rem;
@@ -166,11 +286,44 @@ font-size: 2rem;
 
 .noktalar .card h5 i{
    text-align: center;
-  color: #EF476F;
+  color: #fafafa;
+  font-size: 3rem;
+margin-top: 2rem;
+}
+
+
+.noktalar .col:nth-child(1) .card{
+ background-color: #3b73ed;
+ color: #fafafa !important;
+ height: 50vh !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
 }
 
 
 
+.noktalar .col:nth-child(2) .card{
+ background-color: #ef476f;
+ color: #fafafa !important;
+ height: 50vh !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+}
+
+
+
+
+
+.noktalar .col:nth-child(3) .card{
+ background-color: #059669;
+ color: #fafafa !important;
+ height: 50vh !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+}
 
 
 
@@ -197,6 +350,21 @@ font-size: 2rem;
         background: #f4f4f9;
         text-align: center;
     }
+.services_aciklama {
+ background-color: #3b73ed;
+ padding: 5rem 2rem;
+}
+
+
+
+.services_aciklama h2{
+color: #fafafa;
+}
+
+
+.services_aciklama p:first-of-type{
+color: #fafafa;
+}
 
     .services h2 {
         margin-bottom: 50px;
@@ -278,4 +446,305 @@ font-size: 2rem;
             padding: 12px 25px;
             font-size: 0.9rem;
         }
+    }
+  /*referans*/
+
+  
+.referans_content h3{
+  font-weight: bold;
+  color:#000000;
+  padding: 2rem 1rem;
+}
+.referans .card{
+
+cursor: pointer;
+transition: all 0.5s;
+
+}
+
+
+
+
+.referans .card:hover{
+
+transform: translateY(-5px);
+transition: all 0.5s;
+
+}
+
+
+
+
+
+
+
+
+
+.referans_text{
+  border: none; padding:5rem 2rem; border-radius: 0.3rem; margin-top: 5rem;  ;
+
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+background-color: #1e3c72;
+color: #fafafa;
+font-size: 1.2rem;
+}
+
+.referans .card p{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.referans .card h5{
+   text-align: center;
+font-size: 2rem;
+}
+
+
+
+.referans .card h5 i{
+   text-align: center;
+  color: #fafafa;
+  font-size: 3rem;
+margin-top: 2rem;
+}
+
+
+.referans .col:nth-child(1) .card{
+ background-color: #fafafa;
+ color: #000000 !important;
+ height: 50vh !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+}
+
+
+
+.referans .col:nth-child(2) .card{
+ background-color: #fafafa;
+ color: #000000 !important;
+ height: 50vh !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+}
+
+
+
+
+
+.referans .col:nth-child(3) .card{
+ background-color: #fafafa;
+ color: #000000 !important;
+ height: 50vh !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+}
+
+
+.referans .card h5 i{
+   text-align: center;
+  color: #000000;
+  font-size: 3rem;
+margin-top: 2rem;
+}
+
+/* ------------------ Yardımcılar ------------------ */
+.text-center { text-align:center; }
+.hidden-sm { display:none; }
+@media (min-width: 768px){ .hidden-sm { display:initial; } }
+
+@media (max-width: 600px){  
+
+
+.referans .card p{
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+
+}
+
+
+
+
+
+/*form*/
+ .iletisim {
+        padding: 5rem 2rem;
+        background-color: #f4f4f9;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .iletisim h2 {
+        font-size: 2.5rem;
+        color: #574656;
+        margin-bottom: 1rem;
+    }
+
+    .iletisim p {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 3rem;
+    }
+
+    .iletisim form {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #574656;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #574656;
+        outline: none;
+    }
+
+    button[type="submit"] {
+        background-color: #3b73ed;
+        color: #fff;
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0d6699;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .iletisim form {
+            padding: 0 1rem;
+        }
+    }
+
+
+
+    #iletisimForm {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #iletisimForm input,
+    #iletisimForm textarea {
+        padding: 0.8rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.3s;
+    }
+
+    #iletisimForm input:focus,
+    #iletisimForm textarea:focus {
+        outline: none;
+        border-color: #0d6699;
+        box-shadow: 0 0 5px rgba(13, 102, 153, 0.5);
+    }
+
+    /* BUTTON */
+    #iletisimForm button {
+        padding: 0.8rem;
+        background: #0d6699;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    #iletisimForm button:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    /* KVKK CHECKBOX */
+    #iletisimForm .form-check-label {
+        font-size: 0.9rem;
+        color: #fff;
+    }
+
+    #iletisimForm .form-check-input {
+        cursor: pointer;
+    }
+
+    /* MESAJ */
+    #formSonuc {
+        margin-top: 1rem;
+        padding: 0.8rem;
+        border-radius: 6px;
+        display: none;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* BAÅžARI */
+    #formSonuc.success {
+        background: #ffff;
+        color: #0d6699;
+        border: 1px solid #0d6699;
+    }
+
+    /* HATA */
+    #formSonuc.error {
+        background: #ffff;
+        color: #ff0000;
+        border: 1px solid #ff0000;
+    }
+
+    /* RECAPTCHA */
+    .g-recaptcha {
+        margin: 1rem 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .iletisim {
+            padding: 1rem;
+            margin: 1rem;
+        }
+    }
+
+
+/*footer*/
+
+ footer {
+        background-color: #1e3c72;
+    }
+
+    footer a:hover {
+        color: #43BAFF !important;
+        text-decoration: none;
     }
