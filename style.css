@@ -566,6 +566,41 @@ margin-top: 2rem;
 
 
 
+.referans .col:nth-child(1) .card{
+ background-color: #fafafa;
+ color: #000000 !important;
+ height: auto !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+}
+
+
+
+.referans .col:nth-child(2) .card{
+ background-color: #fafafa;
+ color: #000000 !important;
+ height: auto !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+}
+
+
+
+
+
+.referans .col:nth-child(3) .card{
+ background-color: #fafafa;
+ color: #000000 !important;
+ height: auto !important;
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+}
+
+
+
 }
 
 
